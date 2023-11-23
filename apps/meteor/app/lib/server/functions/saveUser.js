@@ -302,6 +302,11 @@ const saveNewUser = async function (userData, sendPassword) {
 		updateUser.$set['emails.0.verified'] = userData.verified;
 	}
 
+	//For SAML Integration we need to update user eppn   
+	if(userData.eppn) {
+		updateUser.$set['services.saml.eppn'] = userData.eppn;   
+	}
+
 	handleBio(updateUser, userData.bio);
 	handleNickname(updateUser, userData.nickname);
 
@@ -419,6 +424,11 @@ export const saveUser = async function (userId, userData) {
 	if (typeof userData.verified === 'boolean') {
 		updateUser.$set['emails.0.verified'] = userData.verified;
 	}
+
+	//For SAML Integration we nedd to create a user with eppn
+        if (typeof userData.eppn !== 'undefined') {
+                updateUser.$set['services.saml.eppn'] = userData.eppn;
+        }
 
 	await Users.updateOne({ _id: userData._id }, updateUser);
 
