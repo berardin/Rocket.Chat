@@ -15,11 +15,11 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.CI_PAT }}
+      # - name: Checkout Repo
+      #   uses: actions/checkout@v3
+      #   with:
+      #     fetch-depth: 0
+      #     token: ${{ secrets.CI_PAT }}
 
       - name: Setup NodeJS
         uses: ./.github/actions/setup-node
