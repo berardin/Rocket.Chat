@@ -482,6 +482,7 @@ API.v1.addRoute(
 						inclusiveFieldsKeys.includes('name') && 'name.*',
 						inclusiveFieldsKeys.includes('type') && 'type.*',
 						inclusiveFieldsKeys.includes('customFields') && 'customFields.*',
+						inclusiveFieldsKeys.includes('services') && 'services.saml.eppn.*',
 					].filter(Boolean) as string[],
 					this.queryOperations,
 				)
