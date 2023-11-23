@@ -131,7 +131,7 @@ export class APIClass<TBasePath extends string = ''> extends Restivus {
 	public limitedUserFieldsToExclude: IAPIDefaultFieldsToExclude;
 
 	public limitedUserFieldsToExcludeIfIsPrivilegedUser: {
-		services: number;
+		//services: number;
 	};
 
 	constructor(properties: IAPIProperties) {
