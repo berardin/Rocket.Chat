@@ -11,6 +11,7 @@ export type UsersUpdateParamsPOST = {
 		name?: string;
 		password?: string;
 		username?: string;
+		eppn?: string;
 		active?: boolean;
 		bio?: string;
 		nickname?: string;
@@ -53,6 +54,10 @@ const UsersUpdateParamsPostSchema = {
 				},
 				username: {
 					type: 'string',
+					nullable: true,
+				},
+				eppn: {
+					tupe: 'string',
 					nullable: true,
 				},
 				bio: {
