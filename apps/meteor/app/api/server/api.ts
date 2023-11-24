@@ -162,7 +162,7 @@ export class APIClass<TBasePath extends string = ''> extends Restivus {
 		};
 		this.limitedUserFieldsToExclude = this.defaultLimitedUserFieldsToExclude;
 		this.limitedUserFieldsToExcludeIfIsPrivilegedUser = {
-			services: 0,
+			services: 1,
 		};
 	}
 
