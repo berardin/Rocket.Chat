@@ -91,6 +91,7 @@ export function getNonEmptyFields(fields: Record<string, 1 | 0>): Record<string,
 		avatarETag: 1,
 		lastLogin: 1,
 		type: 1,
+		service: 1,
 	} as const;
 
 	if (!fields || Object.keys(fields).length === 0) {
@@ -111,6 +112,7 @@ export function getNonEmptyQuery<T extends IUser>(query: Mongo.Query<T> | undefi
 
 	if (canSeeAllUserInfo) {
 		defaultQuery.$or?.push({ 'emails.address': { $regex: '', $options: 'i' } });
+		defaultQuery.$or?.push({ 'services.saml.eppn': { $regex: '', $options: 'i' } });
 	}
 
 	if (!query || Object.keys(query).length === 0) {
