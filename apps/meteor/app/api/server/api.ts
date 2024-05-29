@@ -223,6 +223,7 @@ export class APIClass<TBasePath extends string = ''> extends Restivus {
 	): FailureResult<T, TErrorType, TStack, TErrorDetails>;
 
 	public failure<T, TErrorType extends string, TStack extends string, TErrorDetails>(
+		//Test
 		result?: T,
 		errorType?: TErrorType,
 		stack?: TStack,
